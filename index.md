@@ -1,6 +1,3 @@
-<p align="left">
-
-
 # GAN Steerability Without Optimization
 
 ## Welcome to our paper webpage
@@ -32,4 +29,3 @@ images can be achieved without optimization, even across different categories.
 Check out our [paper](https://github.com/nsping13/GAN-Steerability-without-optimization/blob/main/Generative_image_manipulations_web_main.pdf) and [Appendix](https://github.com/nsping13/GAN-Steerability-without-optimization/blob/main/Generative_image_manipulations_web_main_SM.pdf).
 
 
-</p>
