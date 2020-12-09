@@ -1,6 +1,6 @@
-## Welcome to our paper webpage
+# Welcome to our paper webpage
 
-# Nurit Spingarn Eliezer    Ron Banner    Tomer Michaeli
+## Nurit Spingarn Eliezer    Ron Banner    Tomer Michaeli
 
 ### Abstract
 
