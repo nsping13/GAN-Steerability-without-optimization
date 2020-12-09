@@ -1,7 +1,4 @@
 
-header {
-  display: none;
-}
 
 # GAN Steerability without optimization
 
