@@ -24,4 +24,6 @@ images can be achieved without optimization, even across different categories.
 <p><img src="https://github.com/nsping13/GAN-steerability-without-optimization-/blob/gh-pages/teaser.pdf" alt="foo" title="title" /></p>
 
 
+ *<a href="https://github.com/nsping13/GAN-steerability-without-optimization-/blob/gh-pages/teaser.pdf">foo*</a>
+ 
 Check out our [paper](https://github.com/nsping13/GAN-steerability-without-optimization-/tree/main).
