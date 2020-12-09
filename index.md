@@ -6,11 +6,11 @@
 
 #### Nurit Spingarn-Eliezer, Ron Banner and Tomer Michaeli
 
-![GitHub Logo](wowo.jpg|width = 100)
+![GitHub Logo](wowo.jpg|width = 50)
 
 
 ### Abstract
-<font size="+5">
+<font size="+1">
 Recent research has shown remarkable success in revealing “steering” directions
 in the latent spaces of pre-trained GANs. These directions correspond to semantically meaningful image transformations (e.g., shift, zoom, color manipulations),
 and have similar interpretable effects across all categories that the GAN can generate. Some methods focus on user-specified transformations, while others discover
