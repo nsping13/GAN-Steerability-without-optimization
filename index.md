@@ -1,4 +1,6 @@
-# Welcome to our paper webpage
+# GAN Steerability Without Optimization
+
+## Welcome to our paper webpage
 
 #### Nurit Spingarn-Eliezer, Ron Banner and Tomer Michaeli
 
