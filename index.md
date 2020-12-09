@@ -1,6 +1,6 @@
-header {
-  display: none;
-}
+---
+title-heading: false
+---
 
 
 # GAN Steerability Without Optimization
