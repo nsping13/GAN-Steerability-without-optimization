@@ -1,4 +1,4 @@
-<p align="center">
+<p align="left">
 
 
 # GAN Steerability Without Optimization
