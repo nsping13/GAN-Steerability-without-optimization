@@ -1,6 +1,6 @@
 # Welcome to our paper webpage
 
-#### Nurit Spingarn-Eliezer,Ron Banner and Tomer Michaeli
+#### Nurit Spingarn-Eliezer, Ron Banner and Tomer Michaeli
 
 ### Abstract
 
@@ -20,8 +20,8 @@ corresponds to the largest extent to which a transformation can be applied witho
 images can be achieved without optimization, even across different categories.
 
 
-<iframe src="https://github.com/nsping13/GAN-steerability-without-optimization-/blob/gh-pages/teaser.pdf&embedded=true" 
-style="width:600px; height:500px;" frameborder="0"></iframe>
+<embed src="https://github.com/nsping13/GAN-steerability-without-optimization-/blob/gh-pages/teaser.pdf" width="600" height="500" alt="pdf" pluginspage="http://www.adobe.com/products/acrobat/readstep2.html">
+
 
 
 
