@@ -1,6 +1,6 @@
 # Welcome to our paper webpage
 
-## Nurit Spingarn Eliezer    Ron Banner    Tomer Michaeli
+## Nurit Spingarn Eliezer &emsp Ron Banner  &emsp  Tomer Michaeli
 
 ### Abstract
 
@@ -19,7 +19,7 @@ another (e.g., zoom-in with or without allowing translation to keep the object c
 corresponds to the largest extent to which a transformation can be applied without incurring degradation. Finally, we show how transferring attributes between
 images can be achieved without optimization, even across different categories.
 
-```markdown
+
 
 
 
