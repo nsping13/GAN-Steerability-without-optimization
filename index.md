@@ -6,11 +6,11 @@
 
 #### Nurit Spingarn-Eliezer, Ron Banner and Tomer Michaeli
 
-![GitHub Logo](wowo.jpg)
+![GitHub Logo](wowo.jpg|width = 100)
 
 
 ### Abstract
-<font size="+5">Description</font>
+<font size="+5">
 Recent research has shown remarkable success in revealing “steering” directions
 in the latent spaces of pre-trained GANs. These directions correspond to semantically meaningful image transformations (e.g., shift, zoom, color manipulations),
 and have similar interpretable effects across all categories that the GAN can generate. Some methods focus on user-specified transformations, while others discover
@@ -25,7 +25,7 @@ we can control whether one transformation is allowed to come on the expense of
 another (e.g., zoom-in with or without allowing translation to keep the object centered). Moreover, we can determine the natural end-point of the trajectory, which
 corresponds to the largest extent to which a transformation can be applied without incurring degradation. Finally, we show how transferring attributes between
 images can be achieved without optimization, even across different categories.
-
+</font>
 
 
 Check out our [paper](https://github.com/nsping13/GAN-Steerability-without-optimization/blob/main/Generative_image_manipulations_web_main.pdf) and [Appendix](https://github.com/nsping13/GAN-Steerability-without-optimization/blob/main/Generative_image_manipulations_web_main_SM.pdf).
