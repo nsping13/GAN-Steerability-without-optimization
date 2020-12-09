@@ -12,7 +12,7 @@
 
 
 ### Abstract
-<font size="+1">
+<font size="+3">
 Recent research has shown remarkable success in revealing “steering” directions
 in the latent spaces of pre-trained GANs. These directions correspond to semantically meaningful image transformations (e.g., shift, zoom, color manipulations),
 and have similar interpretable effects across all categories that the GAN can generate. Some methods focus on user-specified transformations, while others discover
