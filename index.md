@@ -1,6 +1,6 @@
 # Welcome to our paper webpage
 
-#### Nurit Spingarn Eliezer    Ron Banner      Tomer Michaeli
+#### Nurit Spingarn-Eliezer,Ron Banner and Tomer Michaeli
 
 ### Abstract
 
@@ -22,8 +22,6 @@ images can be achieved without optimization, even across different categories.
 
 
 
+Check out our [paper](https://github.com/nsping13/GAN-steerability-without-optimization-/blob/main).
 
-### Link to the paper and Appendix
-
-Check out our [paper](https://github.com/nsping13/GAN-steerability-without-optimization-/blob/main/Generative_image_manipulations_web_main.pdf) [Appendix](https://github.com/nsping13/GAN-steerability-without-optimization-/blob/main/Generative_image_manipulations_web_SM.pdf).
 
