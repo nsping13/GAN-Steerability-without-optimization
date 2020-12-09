@@ -20,9 +20,8 @@ corresponds to the largest extent to which a transformation can be applied witho
 images can be achieved without optimization, even across different categories.
 
 
-<img scr="https://github.com/nsping13/GAN-steerability-without-optimization-/blob/gh-pages/teaser.pdf">
 
-
+<p><img src="https://github.com/nsping13/GAN-steerability-without-optimization-/blob/gh-pages/teaser.pdf" alt="foo" title="title" /></p>
 
 
 Check out our [paper](https://github.com/nsping13/GAN-steerability-without-optimization-/tree/main).
