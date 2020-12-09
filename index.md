@@ -25,6 +25,4 @@ images can be achieved without optimization, even across different categories.
 
 
 
-Check out our [paper](https://github.com/nsping13/GAN-steerability-without-optimization-/blob/main).
-
-
+Check out our [paper](https://github.com/nsping13/GAN-steerability-without-optimization-/tree/main).
