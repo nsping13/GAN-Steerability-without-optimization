@@ -1,6 +1,6 @@
 # Welcome to our paper webpage
 
-## Nurit Spingarn Eliezer &emsp Ron Banner  &emsp  Tomer Michaeli
+#### Nurit Spingarn Eliezer    Ron Banner      Tomer Michaeli
 
 ### Abstract
 
