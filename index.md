@@ -1,7 +1,3 @@
----
-title-heading: false
----
-
 
 ## Welcome to our paper webpage
 
