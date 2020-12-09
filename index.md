@@ -1,5 +1,7 @@
 ## Welcome to our paper webpage
 
+# Nurit Spingarn Eliezer    Ron Banner    Tomer Michaeli
+
 ### Abstract
 
 Recent research has shown remarkable success in revealing “steering” directions
@@ -15,19 +17,13 @@ of more complex effects. Our approach allows determining both linear and nonline
 we can control whether one transformation is allowed to come on the expense of
 another (e.g., zoom-in with or without allowing translation to keep the object centered). Moreover, we can determine the natural end-point of the trajectory, which
 corresponds to the largest extent to which a transformation can be applied without incurring degradation. Finally, we show how transferring attributes between
-images can be achieved without optimization, even across different categories
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+images can be achieved without optimization, even across different categories.
 
 ```markdown
 
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
 
 
 ### Link to the paper and Appendix
 
 Check out our [paper](https://github.com/nsping13/GAN-steerability-without-optimization-/blob/main/Generative_image_manipulations_web_main.pdf) [Appendix](https://github.com/nsping13/GAN-steerability-without-optimization-/blob/main/Generative_image_manipulations_web_SM.pdf).
 
-Code will be available soon
