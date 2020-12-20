@@ -27,5 +27,4 @@ another (e.g., zoom-in with or without allowing translation to keep the object c
 corresponds to the largest extent to which a transformation can be applied without incurring degradation. Finally, we show how transferring attributes between
 images can be achieved without optimization, even across different categories.
 
-Check out our [paper](https://github.com/nsping13/GAN-Steerability-without-optimization/blob/main/Generative_image_manipulations_web_main.pdf) and 
-[Appendix](https://github.com/nsping13/GAN-Steerability-without-optimization/blob/main/Generative_image_manipulations_web_SM.pdf).
+Check out our [paper](https://arxiv.org/pdf/2012.05328.pdf) 
