@@ -9,6 +9,8 @@ Generally, our methods are coded in the file BigGAN.py. Each path can be extract
 For easier reproducing, you can use main.py.
 
 ## Closed form solution 
+
+
 Linear paths: 'l_shifty', 'l_zoom' and 'l_shiftx'.
 
 Newmann paths: 'nl_shifty', 'nl_zoom' and 'nl_shiftx'.
