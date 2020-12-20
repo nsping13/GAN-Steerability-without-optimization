@@ -17,7 +17,8 @@ Great circle: 'gcircle_shifty', 'gcircle_zoom' and 'gcircle_shiftx'
 
 ## Principal directions
 Linear principal directions are based on right singular vectors of the SVD on the FC weight matrix. and can be easily extracted by torch.svd() function. 
-The relevant flags are: 'svd_linear', 'svd_gcircle' and 'svd_scircle' for the linear path, great, and smapll circle paths, accordingly.  
+The relevant flags are: 'svd_linear', 'svd_gcircle' and 'svd_scircle' for the linear path, great, and small circle paths, accordingly.  
+
 
 
 
