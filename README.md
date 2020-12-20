@@ -30,7 +30,13 @@ Small circle | 'svd_scircle'
 
 And here all flags relevant for the corresponding paths of other scaales:
 
+Path | Flag
+------------ | -------------
+Linear  | 'linearin'
+Great circle | 'greatin'
+Small circle | 'smallin'
 
+## Running examples
 
 
 
