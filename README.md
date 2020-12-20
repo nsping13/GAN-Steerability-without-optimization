@@ -1,7 +1,5 @@
 
-An official implementaiton of GAN "Steerability" without optimization 
-
-Check out our [paper](https://arxiv.org/pdf/2012.05328.pdf) 
+An official implementaiton of [GAN "Steerability" without optimization](https://arxiv.org/pdf/2012.05328.pdf) 
 
 
 
