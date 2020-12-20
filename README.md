@@ -5,17 +5,16 @@
 ![logo](teaser.jpg)
 
 
-Generally, our methods are coded in the BigGAN.py. Each path can be extracted by directing the "method" flag accordingly.
-For easier reproducing, we prepared main.py to reproduce the paths proposed by our methods.
+Generally, our methods are coded in the file BigGAN.py. Each path can be extracted by directing the "method" flag accordingly.
+For easier reproducing, you can use main.py.
 
 ## Closed form solution 
-The relevant code can be found in BigGAN.py under the flag options:
 Linear paths: 'l_shifty', 'l_zoom' and 'l_shiftx'.
 Newmann paths: 'nl_shifty', 'nl_zoom' and 'nl_shiftx'.
 Great circle: 'gcircle_shifty', 'gcircle_zoom' and 'gcircle_shiftx'
 
 ## Principal directions
-Linear principal directions are based on right singular vectors of the SVD on the FC weight matrix.  
+Linear principal directions are based on right singular vectors of the SVD on the FC weight matrix. and can be easily extracted by torch.svd() function. The relevant flags are: 'svd_linear', 'svd_gcircle' and 'svd_scircle' for the linear path, great, and smapll circle paths, accordingly.  
 
 
 
