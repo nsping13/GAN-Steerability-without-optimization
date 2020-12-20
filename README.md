@@ -1,15 +1,21 @@
 
-An official pytorch implementaiton of [GAN "Steerability" without optimization](https://arxiv.org/pdf/2012.05328.pdf) 
+# An official pytorch implementaiton of [GAN "Steerability" without optimization](https://arxiv.org/pdf/2012.05328.pdf) 
 
-General:
-All methods are added to the basline BigGAN model. Each one can be easily plugged and played in other GAN models as well.
 
 ![logo](teaser.jpg)
 
-Closed form solution 
 
+Generally, our methods are coded in the BigGAN.py. Each path can be extracted by directing the "method" flag accordingly.
+For easier reproducing, we prepared main.py to reproduce the paths proposed by our methods.
 
-Linear principal directions 
+## Closed form solution 
+The relevant code can be found in BigGAN.py under the flag options:
+Linear paths: 'l_shifty', 'l_zoom' and 'l_shiftx'.
+Newmann paths: 'nl_shifty', 'nl_zoom' and 'nl_shiftx'.
+Great circle: 'gcircle_shifty', 'gcircle_zoom' and 'gcircle_shiftx'
+
+## Principal directions
+Linear principal directions are based on right singular vectors of the SVD on the FC weight matrix.  
 
 
 
