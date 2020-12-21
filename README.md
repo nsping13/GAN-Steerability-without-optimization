@@ -20,15 +20,15 @@ Great circle | 'gcircle_shifty', 'gcircle_zoom' and 'gcircle_shiftx'
 
 
 ## UNSUPERVISED EXPLORATION OF TRANSFORMATIONS
-Linear principal directions are based on right singular vectors of the SVD on the FC weight matrix. and can be easily extracted by torch.svd() function. 
-Here the flags for the first layer paths i.e., all principal directions extracted from the first weight matrix:
+The principal latent space directios are based on the right singular vectors of the SVD on the FC weight matrix.  Here the flags for the first layer unsupervised paths i.e., all principal latent space directions extracted from the first weight matrix:
+
 Path | Flag
 ------------ | -------------
 Linear  | 'svd_linear'
 Great circle | 'svd_gcircle'
 Small circle | 'svd_scircle'
 
-And here all flags relevant for the corresponding paths of other scaales:
+And here the corresponding paths of other scales:
 
 Path | Flag
 ------------ | -------------
