@@ -8,7 +8,7 @@
 Generally, our methods are coded in the file BigGAN.py. Each path can be extracted by directing the "method" flag accordingly.
 For easier reproducing, you can use main.py.
 
-## Closed form solution 
+## USER-SPECIFIED GEOMETRIC TRANSFORMATIONS
 
 ![Closed form solution ](https://github.com/nsping13/GAN-Steerability-without-optimization/blob/main/User%20Specified.jpg)
 
@@ -19,7 +19,7 @@ Newmann  |  'nl_shifty', 'nl_zoom' and 'nl_shiftx'
 Great circle | 'gcircle_shifty', 'gcircle_zoom' and 'gcircle_shiftx'
 
 
-## Principal directions
+## UNSUPERVISED EXPLORATION OF TRANSFORMATIONS
 Linear principal directions are based on right singular vectors of the SVD on the FC weight matrix. and can be easily extracted by torch.svd() function. 
 Here the flags for the first layer paths i.e., all principal directions extracted from the first weight matrix:
 Path | Flag
