@@ -36,6 +36,8 @@ Linear  | 'linearin'
 Great circle | 'greatin'
 Small circle | 'smallin'
 
+For your conveneint we are also sharing multiple functions for extracting directions and for walks. 
+
 ## Running examples
 
 
