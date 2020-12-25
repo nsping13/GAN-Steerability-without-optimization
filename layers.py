@@ -326,7 +326,7 @@ class ccbn(nn.Module):
 
 
       y[0, 128:] = z_norm * (
-                (torch.cos((step))) * (pvzzo / pvzzo.norm(2)) + (torch.sin(theta_zero+step)) * v1[:, inx])
+                (torch.cos((theta_zero+step))) * (pvzzo / pvzzo.norm(2)) + (torch.sin(theta_zero+step)) * v1[:, inx])
 
 
     if method == 'smallin':
