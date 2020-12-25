@@ -42,7 +42,7 @@ For your conveneint we also uploaded separate modules for directions and walks. 
 
 
 ## BigGAN model 
-We downloaded the G_ema.pth for the BigGAN model from [here](https://drive.google.com/drive/u/0/folders/1ak7yc1xcDK6lmPH7-DvJ4-rHYmAeqhSw?ths=true), however you can also use the TFhub and the pytorch implementation [here]( https://github.com/ajbrock/BigGAN-PyTorch) 
+We downloaded the G_ema.pth for the BigGAN model from [here](https://drive.google.com/drive/u/0/folders/1ak7yc1xcDK6lmPH7-DvJ4-rHYmAeqhSw?ths=true), however you can also use the TFhub and the pytorch implementation. Please see [here]( https://github.com/ajbrock/BigGAN-PyTorch) 
 
 ## Cite
 If you are using this code and refernces, please cite us:
