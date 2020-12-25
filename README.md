@@ -41,5 +41,5 @@ Small circle | 'smallin'
 For your conveneint we also uploaded separate modules for directions and walks. Please see modules.py. You are invited to take the module you need and just plant in your code environment, no matter in what method you extracted the direction. 
 
 
-
-
+## BigGAN model 
+We added our G_ema.pth for BigGAN model, however you can also use the pytorch implementation [here]( https://github.com/ajbrock/BigGAN-PyTorch) 
