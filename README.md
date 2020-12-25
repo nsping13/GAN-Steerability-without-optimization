@@ -38,7 +38,7 @@ Small circle | 'smallin'
 
 ## PLUG AND PLAY  
 
-For your conveneint we also uploaded separate modules for directions and walks. Please see modules.py. You are invited to take the module you need and just plant in your code environment.
+For your conveneint we also uploaded separate modules for directions and walks. Please see modules.py. You are invited to take the module you need and just plant in your code environment, no matter in what method you extracted the direction. 
 
 
 
