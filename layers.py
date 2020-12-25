@@ -344,8 +344,8 @@ class ccbn(nn.Module):
 
       step = alpha
 
-      D = torch.sign((Pv.matmul(y[0, 128:])).matmul(v1[:, inx].unsqueeze(0).T))
-      theta_zero = D * np.arccos(
+      tetain = torch.sign((Pv.matmul(y[0, 128:])).matmul(v1[:, inx].unsqueeze(0).T))
+      theta_zero = tetain * np.arccos(
         ((Pvref.matmul(y[0, 128:].T)).norm(2) / torch.sqrt(Pvz)).detach().cpu().numpy()
       )
 
