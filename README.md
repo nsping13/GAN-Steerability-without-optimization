@@ -43,3 +43,13 @@ For your conveneint we also uploaded separate modules for directions and walks. 
 
 ## BigGAN model 
 We added our G_ema.pth for BigGAN model, however you can also use the pytorch implementation [here]( https://github.com/ajbrock/BigGAN-PyTorch) 
+
+## Cite
+If you are using this code and refernces, please cite us:
+@article{spingarn2020gan,
+  title={GAN Steerability without optimization},
+  author={Spingarn-Eliezer, Nurit and Banner, Ron and Michaeli, Tomer},
+  journal={arXiv preprint arXiv:2012.05328},
+  year={2020}
+}
+
