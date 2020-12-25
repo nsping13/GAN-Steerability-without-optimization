@@ -169,4 +169,7 @@ def small_circle_walk(z_start, v, v_ref, step):
 
 
 def linear_walk(z_start, v, step):
+    # input:
+        # z_start vector [20]
+        # v direction [20]
     return z_start+step*v
