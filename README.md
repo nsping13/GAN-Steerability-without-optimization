@@ -36,10 +36,7 @@ Linear  | 'linearin'
 Great circle | 'greatin'
 Small circle | 'smallin'
 
-For your conveneint we also uploaded separate modules for directions and walks. Please see modules.py. 
-
-
-## Running examples
+For your conveneint we also uploaded separate modules for directions and walks. Please see modules.py.
 
 
 
