@@ -267,7 +267,6 @@ class Generator(nn.Module):
         h = self.linear(z)
 
 
-    # working
     if method == 'svd_gcircle':
         W = self.linear.weight.detach()
         u, s, v = torch.svd(W)
@@ -278,7 +277,6 @@ class Generator(nn.Module):
         step = alpha
         tetain = torch.sign(z.matmul(v[:, inx].unsqueeze(0).T))
         theta_zero = tetain*np.arccos((pvzzo.norm(2)/z_norm).detach().cpu().numpy())
-        # z[0, :] = z_norm*((torch.cos((theta_zero+step)))*(pvzzo/pvzzo.norm(2))+(torch.sin(theta_zero+step))*v[:,inx])
         z[0, :] = z_norm*((torch.cos((theta_zero+step)))*(pvzzo/pvzzo.norm(2))+(torch.sin(theta_zero+step))*v[:,inx])
 
         print("stop when step = " , np.pi/2.0-theta_zero)
@@ -305,11 +303,8 @@ class Generator(nn.Module):
         theta_zero = tetain * np.arccos((pv_refzo.norm(2) / torch.sqrt(Pvz)).detach().cpu().numpy())
 
         z[0, :] =  pvzzo+ torch.sqrt(Pvz)*(torch.cos(theta_zero+theta)*v[:,inx2] + torch.sin(theta_zero+theta)*v[:,inx])
-
         print(torch.sin(alpha))
-
         print("stop when cosine = 0 = " , np.pi/2.0-theta_zero)
-
 
         h = self.linear(z)
 
@@ -384,80 +379,8 @@ class Generator(nn.Module):
             add_coeff = 0
             for i in range(1, 1 + alpha):
                 add_coeff = add_coeff + (M.pow(inx*i))
-            # add_coeff = 1 / (add_coeff)
             z = z * M_n + add_coeff * q
         h = self.linear(z)
-
-
-    # if method == 'nl_shifty' and alpha > 0:
-    #     P = torch.zeros((24576, 24576)).cuda()
-    #     T = torch.eye(24576 - 4).cuda()
-    #     P[0:24576 - 4, 4:] = T  # shift up
-    #     D = torch.zeros((24576, 24576)).cuda()
-    #     T = torch.zeros((24576)).cuda()
-    #     ix = torch.arange(0, 24576, 16)
-    #     for ixy in range(ix.shape[0]):
-    #         T[ix[ixy]:ix[ixy] + 12] = 1.0
-    #     D.as_strided([24576], [24576 + 1]).copy_(T)
-    #     W = self.linear.weight.detach()
-    #     b = self.linear.bias.detach()
-    #     l = (torch.inverse(((W.T.matmul(D.T)).matmul(D)).matmul(W))).matmul(W.T).matmul(D.T).matmul(P - D).matmul((b))
-    #     DWT = (D.matmul(W)).T
-    #     DW = D.matmul(W)
-    #     PW = P.matmul(W)
-    #
-    #     q = torch.zeros(z.shape).cuda()
-    #     for i in range(z.shape[1]):
-    #         norma = DWT[i, :].matmul(DW[:, i])
-    #         q[:, i] = (DWT[i, :].matmul(PW[:, i])) / norma
-    #     M_n = q.pow(inx*alpha)
-    #
-    #     if alpha == 0:
-    #         z = z
-    #
-    #     if alpha != 0:
-    #         add_coeff = 0
-    #         for i in range(1,1+alpha):
-    #             add_coeff = add_coeff + (q.pow(inx*i*alpha))
-    #         add_coeff = 1/(add_coeff)
-    #         z = z*M_n + add_coeff*l
-    #     h = self.linear(z)
-    #
-    #
-    #
-    # if method == 'nl_shifty' and alpha < 0:
-    #     alpha = -alpha
-    #     P = torch.zeros((24576, 24576)).cuda()
-    #     T = torch.eye(24576 - 4).cuda()
-    #     P[4:, 0:24576 - 4] = T  # shift up
-    #     D = torch.zeros((24576, 24576)).cuda()
-    #     T = torch.zeros((24576)).cuda()
-    #     ix = torch.arange(4, 24576, 16)
-    #     for ixy in range(ix.shape[0]):
-    #         T[ix[ixy]:ix[ixy] + 12] = 1.0
-    #     D.as_strided([24576], [24576 + 1]).copy_(T)
-    #     W = self.linear.weight.detach()
-    #     b = self.linear.bias.detach()
-    #     l = (torch.inverse(((W.T.matmul(D.T)).matmul(D)).matmul(W))).matmul(W.T).matmul(D.T).matmul(P - D).matmul((b))
-    #     DWT = (D.matmul(W)).T
-    #     DW = D.matmul(W)
-    #     PW = P.matmul(W)
-    #     q = torch.zeros(z.shape).cuda()
-    #     for i in range(z.shape[1]):
-    #         norma = DWT[i, :].matmul(DW[:, i])
-    #         q[:, i] = (DWT[i, :].matmul(PW[:, i])) / norma
-    #     M_n = q.pow(inx*alpha)
-    #     if alpha == 0:
-    #         z = z
-    #     if alpha != 0:
-    #         add_coeff = 0
-    #         for i in range(1,1+(alpha)):
-    #             add_coeff = add_coeff + (q.pow(inx*i*alpha))
-    #         add_coeff = 1/(add_coeff)
-    #         z = z*M_n + add_coeff*l
-    #     h = self.linear(z)
-
-
 
         if method == 'gcircle_shifty' and alpha > 0:
             P = torch.zeros((24576, 24576)).cuda()
@@ -479,8 +402,8 @@ class Generator(nn.Module):
             pvzzo = Pvl.matmul(z[0, :]).unsqueeze(0).cuda()
             z_norm = z.norm(2)
             step = alpha  # /z_norm
-            D = torch.sign(z.matmul(q.unsqueeze(0).T.cuda()))
-            theta_zero = D * np.arccos((pvzzo.norm(2) / z_norm).detach().cpu().numpy())
+            tetain = torch.sign(z.matmul(q.unsqueeze(0).T.cuda()))
+            theta_zero = tetain * np.arccos((pvzzo.norm(2) / z_norm).detach().cpu().numpy())
             z[0, :] = z_norm * ((torch.cos((theta_zero + step))) * (pvzzo / pvzzo.norm(2)) + (
                 torch.sin(theta_zero + step)) * q.cuda())
             h = self.linear(z)
@@ -506,37 +429,13 @@ class Generator(nn.Module):
         pvzzo = Pvl.matmul(z[0, :]).unsqueeze(0).cuda()
         z_norm = z.norm(2)
         step = alpha  # /z_norm
-        D = torch.sign(z.matmul(q.unsqueeze(0).T.cuda()))
-        theta_zero = D * np.arccos((pvzzo.norm(2) / z_norm).detach().cpu().numpy())
+        tetain = torch.sign(z.matmul(q.unsqueeze(0).T.cuda()))
+        theta_zero = tetain * np.arccos((pvzzo.norm(2) / z_norm).detach().cpu().numpy())
         z[0, :] = z_norm * ((torch.cos((theta_zero + step))) * (pvzzo / pvzzo.norm(2)) + (
             torch.sin(theta_zero + step)) * q.cuda())
         h = self.linear(z)
         h = h.view(h.size(0), -1, self.bottom_width, self.bottom_width)
 
-    # if method == 1 and inx == -1000 and alpha > 0:
-    #     P = torch.zeros((24576, 24576)).cuda()
-    #     T = torch.eye(24576-4).cuda()
-    #     P[0:24576-4,4:] = T # shift up
-    #     D = torch.zeros((24576, 24576)).cuda()
-    #     T = torch.zeros((24576)).cuda()
-    #     ix = torch.arange(0, 24576, 16)
-    #     for ixy in range(ix.shape[0]):
-    #         T[ix[ixy]:ix[ixy] + 12] = 1.0
-    #     D.as_strided([24576], [24576 + 1]).copy_(T)
-    #     W = self.linear.weight.detach()
-    #     b = self.linear.bias.detach()
-    #     q = (torch.inverse(((W.T.matmul(D.T)).matmul(D)).matmul(W))).matmul(W.T).matmul(D.T).matmul(P - D).matmul((b))
-    #     Pv = q.unsqueeze(0).T.matmul(q.unsqueeze(0)).cuda()
-    #     Pvl = torch.eye(20).cuda() - Pv.cuda()
-    #     pvzzo = Pvl.matmul(z[0, :]).unsqueeze(0).cuda()
-    #     z_norm = z.norm(2)
-    #     step = alpha  # /z_norm
-    #     D = torch.sign(z.matmul(q.unsqueeze(0).T.cuda()))
-    #     theta_zero = D * np.arccos((pvzzo.norm(2) / z_norm).detach().cpu().numpy())
-    #     z[0, :] = z_norm * ((torch.cos((theta_zero + step))) * (pvzzo / pvzzo.norm(2)) + (
-    #         torch.sin(theta_zero + step)) * q.cuda())
-    #     h = self.linear(z)
-    #     h = h.view(h.size(0), -1, self.bottom_width, self.bottom_width)
 
     if method == 'l_shifty' and alpha > 0:
         P = torch.zeros((24576, 24576)).cuda()
@@ -606,7 +505,6 @@ class Generator(nn.Module):
             add_coeff = 0
             for i in range(1, 1 + alpha):
                 add_coeff = add_coeff + (M.pow(inx * i))
-            # add_coeff = 1 / (add_coeff)
             z = z * M_n + add_coeff * q
         h = self.linear(z)
 
@@ -644,67 +542,6 @@ class Generator(nn.Module):
             z = z * M_n + add_coeff * q
         h = self.linear(z)
 
-    # if method == 'nl_shiftx' and alpha > 0:
-    #     P = torch.zeros((24576, 24576)).cuda()
-    #     T = (torch.tensor([0, 1, 1, 1])).repeat(6144).cuda()
-    #     P.as_strided([24576], [24576 + 1]).copy_(T)
-    #     P = torch.roll(P, -1, [1])
-    #     P = P.T
-    #     D = torch.zeros((24576, 24576)).cuda()
-    #     T = (torch.tensor([1, 1, 1, 0])).repeat(6144).cuda()
-    #     D.as_strided([24576], [24576 + 1]).copy_(T)
-    #     W = self.linear.weight.detach()
-    #     b = self.linear.bias.detach()
-    #     l = (torch.inverse(((W.T.matmul(D.T)).matmul(D)).matmul(W))).matmul(W.T).matmul(D.T).matmul(P - D).matmul((b))
-    #     DWT = (D.matmul(W)).T
-    #     DW = D.matmul(W)
-    #     PW = P.matmul(W)
-    #     q = torch.zeros(z.shape).cuda()
-    #     for i in range(z.shape[1]):
-    #         norma = DWT[i, :].matmul(DW[:, i])
-    #         q[:, i] = (DWT[i, :].matmul(PW[:, i])) / norma
-    #     M_n = q.pow(inx* alpha)
-    #     if alpha == 0:
-    #         z = z
-    #     if alpha != 0:
-    #         add_coeff = 0
-    #         for i in range(1, 1 + alpha):
-    #             add_coeff = add_coeff + (q.pow(inx * i * alpha))
-    #         add_coeff = 1 / (add_coeff)
-    #         z = z * M_n + add_coeff * l
-    #     h = self.linear(z)
-    # if method =='nl_shiftx' and alpha < 0:
-    #     alpha = -alpha
-    #     P = torch.zeros((24576, 24576)).cuda()
-    #     T = (torch.tensor([1, 1, 1, 0])).repeat(6144).cuda()
-    #     P.as_strided([24576], [24576 + 1]).copy_(T)
-    #     P = torch.roll(P, 1, [1])
-    #     P = P.T
-    #     D = torch.zeros((24576, 24576)).cuda()
-    #     T = (torch.tensor([0, 1, 1, 1])).repeat(6144).cuda()
-    #     D.as_strided([24576], [24576 + 1]).copy_(T)
-    #     W = self.linear.weight.detach()
-    #     b = self.linear.bias.detach()
-    #     l = (torch.inverse(((W.T.matmul(D.T)).matmul(D)).matmul(W))).matmul(W.T).matmul(D.T).matmul(P - D).matmul((b))
-    #     DWT = (D.matmul(W)).T
-    #     DW = D.matmul(W)
-    #     PW = P.matmul(W)
-    #     q = torch.zeros(z.shape).cuda()
-    #     for i in range(z.shape[1]):
-    #         norma = DWT[i, :].matmul(DW[:, i])
-    #         q[:, i] = (DWT[i, :].matmul(PW[:, i])) / norma
-    #
-    #     M_n = q.pow(inx * alpha)
-    #     if alpha == 0:
-    #         z = z
-    #     if alpha != 0:
-    #         add_coeff = 0
-    #         for i in range(1, 1 + alpha):
-    #             add_coeff = add_coeff + (q.pow(inx* i * alpha))
-    #         add_coeff = 1 / (add_coeff)
-    #         z = z * M_n + add_coeff * l
-    #     h = self.linear(z)
-
     if method == 'gcircle_shiftx' and alpha > 0:
         # additive mode
         P = torch.zeros((24576, 24576)).cuda()
@@ -725,8 +562,8 @@ class Generator(nn.Module):
         pvzzo = Pvl.matmul(z[0, :]).unsqueeze(0).cuda()
         z_norm = z.norm(2)
         step = alpha  # /z_norm
-        D = torch.sign(z.matmul(q.unsqueeze(0).T.cuda()))
-        theta_zero = D * np.arccos((pvzzo.norm(2) / z_norm).detach().cpu().numpy())
+        tetain = torch.sign(z.matmul(q.unsqueeze(0).T.cuda()))
+        theta_zero = tetain * np.arccos((pvzzo.norm(2) / z_norm).detach().cpu().numpy())
         z[0, :] = z_norm * ((torch.cos((theta_zero + step))) * (pvzzo / pvzzo.norm(2)) + (torch.sin(theta_zero + step)) * q.cuda())
         h = self.linear(z)
         h = h.view(h.size(0), -1, self.bottom_width, self.bottom_width)
@@ -752,8 +589,8 @@ class Generator(nn.Module):
         pvzzo = Pvl.matmul(z[0, :]).unsqueeze(0).cuda()
         z_norm = z.norm(2)
         step = alpha  # /z_norm
-        D = torch.sign(z.matmul(q.unsqueeze(0).T.cuda()))
-        theta_zero = D * np.arccos((pvzzo.norm(2) / z_norm).detach().cpu().numpy())
+        tetain = torch.sign(z.matmul(q.unsqueeze(0).T.cuda()))
+        theta_zero = tetain * np.arccos((pvzzo.norm(2) / z_norm).detach().cpu().numpy())
         z[0, :] = z_norm * ((torch.cos((theta_zero + step))) * (pvzzo / pvzzo.norm(2)) + (
             torch.sin(theta_zero + step)) * q.cuda())
         h = self.linear(z)
@@ -819,7 +656,6 @@ class Generator(nn.Module):
             add_coeff = 0
             for i in range(1, 1 + alpha):
                 add_coeff = add_coeff + (M.pow(inx * i))
-            # add_coeff = 1 / (add_coeff)
             z = z * M_n + add_coeff * q
         h = self.linear(z)
 
@@ -879,13 +715,11 @@ class Generator(nn.Module):
             add_coeff = 0
             for i in range(1, 1 + alpha):
                 add_coeff = add_coeff + (M.pow(inx * i))
-            # add_coeff = 1 / (add_coeff)
             z = z * M_n + add_coeff * q
         h = self.linear(z)
 
 
     if method == 'l_zoom' and alpha > 0:
-        # additive mode
         P = torch.zeros((24576, 24576))
         T = torch.tensor([0,0,0,0,0,1,1,0,0,1,1,0,0,0,0,0]).repeat(1536)
         P.as_strided([24576], [24576 + 1]).copy_(T)
@@ -898,10 +732,7 @@ class Generator(nn.Module):
         h = h.view(h.size(0), -1, self.bottom_width, self.bottom_width)
 
 
-
-
     if method == 'gcircle_zoom' and alpha > 0:
-        # additive mode
         P = torch.zeros((24576, 24576))
         T = torch.tensor([0,0,0,0,0,1,1,0,0,1,1,0,0,0,0,0]).repeat(1536)
         P.as_strided([24576], [24576 + 1]).copy_(T)
@@ -914,8 +745,8 @@ class Generator(nn.Module):
         pvzzo = Pvl.matmul(z[0, :]).unsqueeze(0).cuda()
         z_norm = z.norm(2)
         step = alpha
-        D = torch.sign(z.matmul(q.unsqueeze(0).T.cuda()))
-        theta_zero = D * np.arccos((pvzzo.norm(2) / z_norm).detach().cpu().numpy())
+        tetain = torch.sign(z.matmul(q.unsqueeze(0).T.cuda()))
+        theta_zero = tetain * np.arccos((pvzzo.norm(2) / z_norm).detach().cpu().numpy())
         z[0, :] = z_norm * ((torch.cos((theta_zero + step))) * (pvzzo / pvzzo.norm(2)) + (torch.sin(theta_zero + step)) * q.cuda())
         h = self.linear(z)
         h = h.view(h.size(0), -1, self.bottom_width, self.bottom_width)
@@ -923,7 +754,6 @@ class Generator(nn.Module):
 
 
     if method == 'gcircle_shiftx' and alpha > 0:
-        # additive mode
         alpha = -alpha
         P = torch.eye(24576)
         D = torch.zeros((24576, 24576))
@@ -964,13 +794,11 @@ class Generator(nn.Module):
         pvzzo = Pvl.matmul(z[0, :]).unsqueeze(0).cuda()
         z_norm = z.norm(2)
         step = alpha
-        D = torch.sign(z.matmul(q.unsqueeze(0).T.cuda()))
-        theta_zero = D * np.arccos((pvzzo.norm(2) / z_norm).detach().cpu().numpy())
+        tetain = torch.sign(z.matmul(q.unsqueeze(0).T.cuda()))
+        theta_zero = tetain * np.arccos((pvzzo.norm(2) / z_norm).detach().cpu().numpy())
         z[0, :] = z_norm * ((torch.cos((theta_zero + step))) * (pvzzo / pvzzo.norm(2)) + (torch.sin(theta_zero + step)) * q.cuda())
         h = self.linear(z)
         h = h.view(h.size(0), -1, self.bottom_width, self.bottom_width)
-
-
 
     if method == 'l_zoom' and alpha < 0:
         alpha = -alpha
