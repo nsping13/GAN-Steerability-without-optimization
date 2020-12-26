@@ -12,7 +12,6 @@ import torchvision
 import torch.optim as optim
 import torch.nn as nn
 import utils
-from transforms import ZoomTransform, ShiftXTransform, ShiftYTransform
 
 
 parser = utils.prepare_parser()
@@ -69,6 +68,37 @@ with torch.no_grad():
 
 ims = []
 z_save = copy.deepcopy(z_).clamp_(-1,1)
+alphas = torch.arange(-3,3,1)
+for i in range(alphas.shape[0]):
+    z_save = copy.deepcopy(z_).clamp_(-1, 1)
+    ims.append(G(z_save, G.shared(y_), method='linearin', alpha=alphas[i] , inx=0, inx2=32).detach()) # inx2 here comes for the scale i.e., 8 for the second, 16 for the third and 64 for the upper one.
+
+image_grid = torchvision.utils.make_grid(
+    torch.cat(ims),
+    nrow=alphas.shape[0]+1
+    ,
+    normalize=True,
+)
+image_grid_np = image_grid.cpu().numpy().transpose(1, 2, 0) * 255
+image_grid_np = np.uint8(image_grid_np)
+print("Image Grid Shape: {}".format(np.shape(image_grid_np)))
+print("Max pixel value: {}".format(np.max(image_grid_np)))
+print("Min pixel value: {}".format(np.min(image_grid_np)))
+fi = plt.imshow(image_grid_np)
+fi.axes.get_yaxis().set_visible(False)
+fi.axes.get_xaxis().set_visible(False)
+
+
+
+
+
+with torch.no_grad():
+    z_.sample_()
+    y_.sample_()
+    y_[0] = 155
+
+ims = []
+z_save = copy.deepcopy(z_).clamp_(-1,1)
 (G(z_save, G.shared(y_), method='svd_gcircle', alpha=torch.tensor(0.0) , inx=0, inx2=19).detach())
 
 ims = []
@@ -97,32 +127,6 @@ fi.axes.get_yaxis().set_visible(False)
 fi.axes.get_xaxis().set_visible(False)
 
 
-with torch.no_grad():
-    z_.sample_()
-    y_.sample_()
-    y_[0] = 155
-
-ims = []
-z_save = copy.deepcopy(z_).clamp_(-1,1)
-alphas = torch.arange(-3,3,1)
-for i in range(alphas.shape[0]):
-    z_save = copy.deepcopy(z_).clamp_(-1, 1)
-    ims.append(G(z_save, G.shared(y_), method='linearin', alpha=alphas[i] , inx=0, inx2=32).detach()) # inx2 here comes for the scale i.e., 8 for the second, 16 for the third and 64 for the upper one.
-
-image_grid = torchvision.utils.make_grid(
-    torch.cat(ims),
-    nrow=alphas.shape[0]+1
-    ,
-    normalize=True,
-)
-image_grid_np = image_grid.cpu().numpy().transpose(1, 2, 0) * 255
-image_grid_np = np.uint8(image_grid_np)
-print("Image Grid Shape: {}".format(np.shape(image_grid_np)))
-print("Max pixel value: {}".format(np.max(image_grid_np)))
-print("Min pixel value: {}".format(np.min(image_grid_np)))
-fi = plt.imshow(image_grid_np)
-fi.axes.get_yaxis().set_visible(False)
-fi.axes.get_xaxis().set_visible(False)
 
 
 
