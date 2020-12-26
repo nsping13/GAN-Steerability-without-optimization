@@ -313,21 +313,21 @@ class ccbn(nn.Module):
     # torch.save(v1[:,0],'direction.pth')
     
     if method == 'linearin':
-        y[0,128:] = y[0,128:] + alpha* v1[:, 0]
+        y[0,128:] = y[0,128:] + alpha* v1[:, inx]
 
     if method == 'greatin':
       Pv = v1[:, inx].unsqueeze(0).T.matmul(v1[:, inx].unsqueeze(0))
       Pvl = torch.eye(20).cuda() - Pv
       pvzzo = Pvl.matmul(y[0, 128:]).unsqueeze(0)
       z_norm = y[0, 128:].norm(2)
-      step = alpha # / z_norm
+      step = alpha
       tetain = torch.sign(y[0, 128:].matmul(v1[:, inx].unsqueeze(0).T))
-      theta_zero =tetain * np.arccos((pvzzo.norm(2) / z_norm).detach().cpu().numpy())
+      theta_zero = tetain * np.arccos((pvzzo.norm(2) / z_norm).detach().cpu().numpy())
 
 
-      y[0, 128:] = z_norm * (
-                (torch.cos((theta_zero+step))) * (pvzzo / pvzzo.norm(2)) + (torch.sin(theta_zero+step)) * v1[:, inx])
+      y[0, 128:] = z_norm * ((torch.cos((step+theta_zero))) * (pvzzo / pvzzo.norm(2)) + (torch.sin(step+theta_zero)) * v1[:, inx])
 
+      print("stop when step = ", np.pi / 2.0 - theta_zero)
 
     if method == 'smallin':
       vv = torch.zeros((20, 2)).cuda()
@@ -335,7 +335,6 @@ class ccbn(nn.Module):
       vv[:, 1] = v1[:, 19]
       Pv = vv.matmul(vv.T)
       Pvref = v1[:, 19].unsqueeze(0).T.matmul(v1[:, 19].unsqueeze(0))
-      # Pv = v[:, inx].unsqueeze(0).T.matmul(v[:, inx].unsqueeze(0))
       Pvl = torch.eye(20).cuda() - Pv
       Pvz = (Pv.matmul(y[0, 128:])).T.matmul(Pv.matmul(y[0, 128:]))
       pvzzo = Pvl.matmul(y[0, 128:]).unsqueeze(0)
@@ -348,7 +347,7 @@ class ccbn(nn.Module):
       )
 
       y[0, 128:] = pvzzo + torch.sqrt(Pvz) * (
-              (torch.cos((step+theta_zero))) * (v1[:, 19]) + (torch.sin(step+theta_zero)) * (v1[:, inx]))
+              (torch.cos((theta_zero+step))) * (v1[:, 19]) + (torch.sin(theta_zero+step)) * (v1[:, inx]))
 
 
 
