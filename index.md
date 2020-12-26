@@ -28,7 +28,3 @@ corresponds to the largest extent to which a transformation can be applied witho
 images can be achieved without optimization, even across different categories.
 
 Check out our [paper](https://arxiv.org/pdf/2012.05328.pdf) 
-
-Thanks!
-Nurit (nurit.spini@gmail.com)
-
