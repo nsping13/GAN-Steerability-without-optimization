@@ -1,5 +1,5 @@
 
-# An official pytorch implementaiton of [GAN "Steerability" without optimization](https://arxiv.org/pdf/2012.05328.pdf) 
+# A pytorch implementaiton of [GAN "Steerability" without optimization](https://arxiv.org/pdf/2012.05328.pdf) 
 
 
 ![logo](teaser.jpg)
@@ -59,4 +59,8 @@ journal={arXiv preprint arXiv:2012.05328},
 year={2020}
 
 }
+
+For any quastion or issue, write to me!
+nurit.spini@gmail.com
+
 
