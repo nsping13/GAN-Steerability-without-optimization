@@ -4,9 +4,10 @@
 
 ![logo](teaser.jpg)
 
+## GENERAL
 
-Generally, our methods are coded in the file BigGAN.py. Each path can be extracted by directing the "method" flag accordingly.
-For easier reproducing, you can use main.py.
+Generally, our methods are coded in the file BigGAN.py. Each path can be extracted by directing the "method" flag accordingly. Full description can be found below.
+Also, for easier reproducing, you can use main.py.
 
 ## USER-SPECIFIED GEOMETRIC TRANSFORMATIONS
 
