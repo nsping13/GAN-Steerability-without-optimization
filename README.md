@@ -49,7 +49,7 @@ We downloaded the G_ema.pth for the BigGAN model from [here](https://drive.googl
 You are also invited to explore Imagenet classes [here](https://gist.github.com/yrevar/942d3a0ac09ec9e5eb3a)
 
 ## Cite
-If you are using this code and refernces, please cite us:
+If you are using this code and, please cite us:
 
 @article{spingarn2020gan,
 
