@@ -60,7 +60,7 @@ year={2020}
 
 }
 
-For any quastion or issue, write to me!
+For any question or issue, write to me!
 nurit.spini@gmail.com
 
 
