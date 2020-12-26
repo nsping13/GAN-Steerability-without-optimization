@@ -20,7 +20,8 @@ Great circle | 'gcircle_shifty', 'gcircle_zoom' and 'gcircle_shiftx'
 
 
 ## UNSUPERVISED EXPLORATION OF TRANSFORMATIONS
-The principal latent space directios are based on the right singular vectors of the SVD on the FC weight matrix.  Here the flags for the first layer unsupervised paths i.e., all principal latent space directions extracted from the first weight matrix:
+The principal latent space directios are based on the right singular vectors of the SVD of the FC weight matrix.  
+Here the flags for the first layer unsupervised paths i.e., all principal latent space directions extracted from the first weight matrix:
 
 Path | Flag
 ------------ | -------------
@@ -35,6 +36,8 @@ Path | Flag
 Linear  | 'linearin'
 Great circle | 'greatin'
 Small circle | 'smallin'
+
+The specific order direction is set by the index parameter. 
 
 ## PLUG AND PLAY  
 
