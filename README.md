@@ -42,7 +42,8 @@ The specific order direction is set by the index parameter.
 
 ## PLUG AND PLAY  
 
-For your conveneint we also uploaded separate modules for directions and walks. Please see modules.py. You are invited to take the module you need and just plant in your code environment. It enables orthogonality between the way of extracting the direction and the path.
+For convenience we also uploaded separate modules for directions and walks. Please see modules.py. 
+You are invited to take the module you need and just plant in your code environment. This allows using separately methods for extracting directions and methods for constructing walks from given directions.
 
 ## BigGAN model 
 We downloaded the G_ema.pth for the BigGAN model from [here](https://drive.google.com/drive/u/0/folders/1ak7yc1xcDK6lmPH7-DvJ4-rHYmAeqhSw?ths=true), however you can also use the TFhub and the pytorch implementation. Please see [here](https://github.com/ajbrock/BigGAN-PyTorch). 
