@@ -31,7 +31,7 @@ def extract_directions_user_pre_described(W, b, desired_effect):
     if desired_effect == "shift_y_down":
         P = torch.zeros((dimw, dimw)).cuda()
         T = torch.eye(dimw - 4).cuda()
-        P[4:, 0:dimw - 4] = T  # shift up
+        P[4:, 0:dimw - 4] = T 
         D = torch.zeros((dimw, dimw)).cuda()
         T = torch.zeros((dimw)).cuda()
         ix = torch.arange(4, dimw, 16)
