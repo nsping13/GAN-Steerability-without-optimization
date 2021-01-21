@@ -1,5 +1,5 @@
 
-# A pytorch implementaiton of [GAN "Steerability" without optimization](https://arxiv.org/pdf/2012.05328.pdf) 
+# An official pytorch implementaiton of [GAN "Steerability" without optimization](https://arxiv.org/pdf/2012.05328.pdf) 
 
 
 ![logo](teaser.jpg)
