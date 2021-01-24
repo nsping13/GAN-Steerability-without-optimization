@@ -54,7 +54,7 @@ If you are using this code and, please cite us:
 
 @article{spingarn2020gan,
 
-title={GAN Steerability without optimization},
+title={GAN "Steerability" without optimization},
 
 author={Spingarn-Eliezer, Nurit and Banner, Ron and Michaeli, Tomer},
 
