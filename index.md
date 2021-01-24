@@ -1,6 +1,6 @@
 
 
-# GAN Steerability without optimization
+# GAN "Steerability" without optimization
 
 ## Welcome to our paper webpage
 
