@@ -1,6 +1,6 @@
 
 # GAN "Steerability" without optimization, ICLR 2021 (Spotlight)
-An official implementation 
+This is an official pytorch implementation
 
 ![logo](teaser.jpg)
 
