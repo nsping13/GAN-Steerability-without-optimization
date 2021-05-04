@@ -52,12 +52,6 @@ You are also invited to explore Imagenet classes [here](https://gist.github.com/
 ## Cite
 If you are using this code and, please cite us:
 
-@inproceedings{zhao2021comodgan,
-  title={GAN "Steerability" without optimization},
-  author={Spingarn-Eliezer, Nurit and Banner, Ron and Michaeli, Tomer},
-  booktitle={International Conference on Learning Representations (ICLR)},
-  year={2021}
-}
 
 For any question or issue, write to me!
 nurit.spini@gmail.com
