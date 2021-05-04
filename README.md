@@ -51,6 +51,14 @@ You are also invited to explore Imagenet classes [here](https://gist.github.com/
 
 ## Cite
 If you are using this code and, please cite us:
+@inproceedings{
+spingarn2021gan,
+title={{\{}GAN{\}} ''Steerability'' without optimization },
+author={Nurit Spingarn and Ron Banner and Tomer Michaeli},
+booktitle={International Conference on Learning Representations},
+year={2021},
+url={https://openreview.net/forum?id=zDy_nQCXiIj}
+}
 
 
 For any question or issue, write to me!
