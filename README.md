@@ -49,24 +49,6 @@ You are invited to take the module you need and just plant in your code environm
 We downloaded the G_ema.pth for the BigGAN model from [here](https://drive.google.com/drive/u/0/folders/1ak7yc1xcDK6lmPH7-DvJ4-rHYmAeqhSw?ths=true), however you can also use the TFhub and the pytorch implementation. Please see [here](https://github.com/ajbrock/BigGAN-PyTorch). 
 You are also invited to explore Imagenet classes [here](https://gist.github.com/yrevar/942d3a0ac09ec9e5eb3a)
 
-## Cite
-If you are using this code and, please cite us:
-@inproceedings{
-
-spingarn2021gan,
-
-title={{\{}GAN{\}} ''Steerability'' without optimization },
-
-author={Nurit Spingarn and Ron Banner and Tomer Michaeli},
-
-booktitle={International Conference on Learning Representations},
-
-year={2021},
-
-url={https://openreview.net/forum?id=zDy_nQCXiIj}
-
-}
-
 
 For any question or issue, write to me!
 nurit.spini@gmail.com
