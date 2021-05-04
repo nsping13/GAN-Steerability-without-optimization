@@ -1,6 +1,6 @@
 
-# An official pytorch implementaiton of [GAN "Steerability" without optimization](https://arxiv.org/pdf/2012.05328.pdf) 
-
+# GAN "Steerability" without optimization, ICLR 2021 (Spotlight)
+An official implementation 
 
 ![logo](teaser.jpg)
 
@@ -52,16 +52,11 @@ You are also invited to explore Imagenet classes [here](https://gist.github.com/
 ## Cite
 If you are using this code and, please cite us:
 
-@article{spingarn2020gan,
-
-title={GAN "Steerability" without optimization},
-
-author={Spingarn-Eliezer, Nurit and Banner, Ron and Michaeli, Tomer},
-
-journal={arXiv preprint arXiv:2012.05328},
-
-year={2020}
-
+@inproceedings{zhao2021comodgan,
+  title={GAN "Steerability" without optimization},
+  author={Spingarn-Eliezer, Nurit and Banner, Ron and Michaeli, Tomer},
+  booktitle={International Conference on Learning Representations (ICLR)},
+  year={2021}
 }
 
 For any question or issue, write to me!
